@@ -1,0 +1,8 @@
+CREATE DATABASE project_webapp;
+
+USE project_webapp;
+
+CREATE table users(user_ID INT NOT NULL AUTO_INCREMENT,name VARCHAR(60) NULL,message TEXT NULL,created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                   PRIMARY KEY(user_ID));
+
+--------------------------------------------------------------------------------------
