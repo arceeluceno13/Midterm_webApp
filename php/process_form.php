@@ -13,6 +13,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Prepare an SQL statement for execution
     $stmt = $conn->prepare("INSERT INTO users(name, email, message) VALUES(?, ?, ?)");
 
+    if (!preg_match('/^[a-zA-Z\s]+$/', $name)) {
+        header("location: ../php/Error.php");
+        // echo "Invalid format. Only letters and spaces are allowed.";
+        exit;
+    }
+
+    if (!preg_match('/^[\w\s.,!?\'"()]+$/', $message)) {
+        header("location: ../php/Error.php");
+        // echo "Invalid format. Only letters, numbers, and certain punctuation are allowed.";
+        exit;
+    }
+
     // Bind variables to the prepared statement as parameters
     // sss stands for string, string, string (3 strings).
     // bind_param() is used to bind variables to the SQL query and tells the database what to expect..

